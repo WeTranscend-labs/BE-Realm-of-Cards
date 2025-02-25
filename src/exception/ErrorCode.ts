@@ -11,23 +11,25 @@ export const ERROR_CODES: Record<string, ErrorDetail> = {
     statusCode: 400,
   },
 
-  // question
-  QUESTION_ALREADY_EXISTS: {
-    code: 1002,
-    message: 'Question ID already exists',
+  // Session-related errors
+  INVALID_SESSION_PLAYER_ID: {
+    code: 2001,
+    message:
+      'The provided player ID is invalid or empty. Please provide a valid Ethereum wallet address.',
+    statusCode: 400,
+  },
+  SESSION_ALREADY_ACTIVE: {
+    code: 2002,
+    message: 'An active session already exists for this player.',
     statusCode: 409,
   },
-  QUESTION_NOT_FOUND: {
-    code: 1003,
-    message: 'Question Id not found',
-    statusCode: 400,
-  },
-  INVALID_QUESTION_ID: {
-    code: 1004,
-    message: 'Invalid Question Id',
-    statusCode: 400,
+  SESSION_NOT_FOUND: {
+    code: 2003,
+    message: 'Session not found.',
+    statusCode: 404,
   },
 
+  // General error
   INTERNAL_SERVER_ERROR: {
     code: 9999,
     message: 'Unexpected error occurred',
