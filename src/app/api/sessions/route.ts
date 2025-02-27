@@ -7,16 +7,11 @@ import { SessionService } from '@/module/session/session.service';
 import { NextResponse } from 'next/server';
 
 // Khởi tạo repository và service
-const sessionRepository = new SessionRepository();
-const sessionService = new SessionService(sessionRepository);
+const sessionService = new SessionService(new SessionRepository());
 
 export async function POST(req: Request) {
   try {
     const { playerId } = await req.json();
-
-    if (!playerId) {
-      throw new AppException(ERROR_CODES.INVALID_SESSION_PLAYER_ID);
-    }
 
     const newSession = await sessionService.createSession(playerId);
 

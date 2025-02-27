@@ -5,9 +5,14 @@ import { ApiResponse } from '@/common/ApiResponse';
 import { ERROR_CODES } from './ErrorCode';
 
 export function handleError(error: any) {
+  // console.log('🚀 handleError called with:', error);
+
   if (error instanceof AppException) {
     return NextResponse.json(
-      ApiResponse.error(error.errorDetail.code, error.errorDetail.message),
+      ApiResponse.error(
+        error.errorDetail.code,
+        error.errorDetail.message
+      ).toJSON(),
       { status: error.errorDetail.statusCode }
     );
   }
@@ -17,7 +22,7 @@ export function handleError(error: any) {
       ApiResponse.error(
         ERROR_CODES.VALIDATION_ERROR.code,
         ERROR_CODES.VALIDATION_ERROR.message
-      ),
+      ).toJSON(),
       { status: 400 }
     );
   }
@@ -26,7 +31,7 @@ export function handleError(error: any) {
     ApiResponse.error(
       ERROR_CODES.INTERNAL_SERVER_ERROR.code,
       ERROR_CODES.INTERNAL_SERVER_ERROR.message
-    ),
+    ).toJSON(),
     { status: 500 }
   );
 }

@@ -16,11 +16,10 @@ datasource db {
 model Session {
   id          String            @id @default(auto()) @map("_id") @db.ObjectId
   playerId    String            // Player's wallet address
-  startTime   String            // Session start time
+  startTime   DateTime?          @default(now())  // Session start time
   isCompleted Boolean           // Completion status
-  monsters    DefeatedMonster[] @relation("SessionMonsters")
 
-  @@map("sessions")
+  monsters    DefeatedMonster[] @relation("SessionToMonster")
 }
 
 model DefeatedMonster {
@@ -28,7 +27,5 @@ model DefeatedMonster {
   monsterId    Int      // Monster's ID
   finishedTime String   // Defeat timestamp
   sessionId    String   @db.ObjectId
-  session      Session  @relation("SessionMonsters", fields: [sessionId], references: [id])
-
-  @@map("defeated_monsters")
+  session      Session  @relation("SessionToMonster", fields: [sessionId], references: [id])
 }
