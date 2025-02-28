@@ -9,7 +9,7 @@ Welcome to the powerful engine driving **Realm of Cards - TCG Battle Adventure**
 
 ## Table of Contents
 
-- [What is Realm of Cards - Frontend?](#what-is-realm-of-cards---frontend)
+- [What is Realm of Cards - Backend?](#what-is-realm-of-cards---backend)
 - [How to Get Started](#how-to-get-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -22,7 +22,7 @@ Welcome to the powerful engine driving **Realm of Cards - TCG Battle Adventure**
 
 ----------
 
-## What is Realm of Cards - Frontend? 
+## What is Realm of Cards - Backend? 
 
 **Realm of Cards - Backend** is the mighty backbone of a blockchain-powered trading card game. While the frontend dazzles with card combat and deck-building, this backend works tirelessly to: - Store game states **off-chain** for lightning-fast performance ⚡ - Optimize gas fees for future on-chain interactions - Integrate seamlessly with the **HappyChain Testnet** to keep your assets secure 🧙‍♂️ It’s the perfect fusion of strategy and tech, ensuring every duel feels like a masterpiece. Ready to see what keeps the realm running?
 
