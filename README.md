@@ -61,9 +61,9 @@ Before you begin, make sure you have:
    npx prisma generate
    ```
 5.  **Start the development server**:  
-   ```bash
-   npx prisma generate
-   ```
+	   ```bash
+	   npx prisma generate
+	```
 6. **Access the Backend**:
 -  The server will be live at http://localhost:8080.
   
