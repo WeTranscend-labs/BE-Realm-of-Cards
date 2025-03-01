@@ -60,11 +60,15 @@ Before you begin, make sure you have:
    ```bash
    npx prisma generate
    ```
-5.  **Start the development server**:  
+5. **Sync the schema with the database**:
+   ```bash
+   npx prisma db push
+   ```   
+6.  **Start the development server**:  
 	   ```bash
-	   npx prisma generate
+	   npm run dev
 	```
-6. **Access the Backend**:
+7. **Access the Backend**:
 -  The server will be live at http://localhost:8080.
   
 -   Grab a coffee and watch the backend magic unfold! ☕✨
